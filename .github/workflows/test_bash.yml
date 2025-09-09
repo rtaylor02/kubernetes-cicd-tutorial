@@ -5,9 +5,21 @@ jobs:
   test-simple-echo:
     runs-on: self-hosted
     steps:
-      - name: Update GitOps repository
+      # - name: Update GitOps repository
+      #   shell: bash
+      #   env:
+      #     GIT_TOKEN: ${{ secrets.GITOPS_PAT }}
+      #   run: |
+      #     pwd
+
+      - name: Run pwd (Linux/macOS)
+        if: runner.os != 'Windows'
         shell: bash
-        env:
-          GIT_TOKEN: ${{ secrets.GITOPS_PAT }}
+        run: |
+          pwd
+      
+      - name: Run pwd (Windows self-hosted)
+        if: runner.os == 'Windows'
+        shell: 'C:\Program Files\Git\bin\bash.exe {0}'
         run: |
           pwd
