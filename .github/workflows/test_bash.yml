@@ -6,7 +6,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Update GitOps repository
-        shell: bash
+        # shell: bash
         env:
           GIT_TOKEN: ${{ secrets.GITOPS_PAT }}
         run: |
