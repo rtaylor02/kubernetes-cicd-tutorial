@@ -20,6 +20,6 @@ jobs:
       
       - name: Run pwd (Windows self-hosted)
         if: runner.os == 'Windows'
-        shell: 'C:\Program Files\Git\bin\bash.exe {0}'
+        shell: 'C:/Program Files/Git/bin/bash.exe {0}'
         run: |
           pwd
