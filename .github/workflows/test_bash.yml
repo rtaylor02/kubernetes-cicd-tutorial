@@ -1,8 +1,8 @@
-name: CI/CD Pipeline
+name: Test Bash
 on:
   workflow_dispatch:
 jobs:
-  test-bash:
+  test-simple-echo:
     runs-on: self-hosted
     steps:
       - name: Update GitOps repository
